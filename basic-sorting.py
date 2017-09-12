@@ -1,3 +1,11 @@
+userarray=input("Enter a series of numbers, divided by space, to have it "
+    "sorted.\n")
+userarray=userarray.split(" ")
+for i in range(len(userarray)):
+    userarray[i]=int(userarray[i])
+counter = 0
+
+
 def bubbleSort(inparray):
     """
     Implements bubble sorting.
@@ -8,8 +16,8 @@ def bubbleSort(inparray):
     array = inparray.copy()
     for i in range(len(array)):
         for j in range(len(array) - i - 1):
-            if array[j] > array[j+1]:
-                array[j], array[j+1] = array[j+1], array[j]
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
                 counter+=1
                 print("Step " + str(counter) + ": " + str(array))
     if counter == 0:
@@ -55,15 +63,6 @@ def mergeSort(array):
     return merge(a, b)
 
 
-
-
-userarray=input("Enter a series of numbers, divided by space, to have it "
-    "sorted.\n")
-userarray=userarray.split(" ")
-for i in range(len(userarray)):
-    userarray[i]=int(userarray[i])
-counter = 0
-
 print("\nBubble:\n")
 bubbleSort(userarray)
 
@@ -72,4 +71,3 @@ if counter != 0:
     print(mergeSort(userarray))
 
 input("\nSorting finished. Press Enter to close the program.")
-
